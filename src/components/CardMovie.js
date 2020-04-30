@@ -1,0 +1,39 @@
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import {Col, Image, Button} from 'react-bootstrap'
+import { setMovie } from '../store/actions'
+
+import Loading from '../components/Loading'
+
+export default function CardMovie(props) {
+    const dispatch = useDispatch()
+    const history = useHistory()
+    const movie = props.movie
+
+    const loading = useSelector(state => state.reducers.loading)
+
+    const detailButton = ( event) => {
+        // console.log(movie)
+        dispatch(setMovie(movie))
+        history.push('/movie')
+    }
+
+    if(loading) return <Loading/>
+    return (
+        <div className="m-3">
+            <Col xs={6} md={4}>
+                <div className="color-overlay"></div>
+                <Image src={movie.Poster} rounded style={{opacity: "0.8"}}/>
+            </Col>
+            <p className="titleMovieList">{movie.Title}</p>
+            <div className="iconNext">
+                <i 
+                className="fas fa-chevron-circle-right fa-lg"
+                onClick={(event) => detailButton(event)}
+                style={{color: "#f1f1f1"}}
+                ></i>
+            </div>
+        </div>
+    )
+}
