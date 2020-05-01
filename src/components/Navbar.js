@@ -9,12 +9,12 @@ export default function Navbar() {
         <div className="navbar-movie m-3">
             <Nav>
             <Nav.Item>
-                <Nav.Link href="/" style={{color: 'black'}}>Home</Nav.Link>
+                <Nav.Link href="/" style={{color: 'black'}}>HOME</Nav.Link>
             </Nav.Item>
             <Nav.Item>
                 <Nav.Link style={{color: 'black'}}><i 
-                className="fas fa-chevron-right fa-lg"
-                style={{color: "#f1f1f1", alignItems:'center'}}
+                className="fas fa-chevron-right fa-sm"
+                style={{color: "black", alignItems:'center'}}
                 ></i></Nav.Link>
             </Nav.Item>
             <Nav.Item>

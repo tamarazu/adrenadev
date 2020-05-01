@@ -22,11 +22,13 @@ export default function ListMovies() {
     if(loading) return <Loading/>
     return(
         <div>
-            <Image src="https://cdn.collider.com/wp-content/uploads/2011/12/the-avengers-movie-poster-banners-04.jpg" fluid />
-            <div>
-                <h1 className="display-4 textBanner">News banner text preview</h1>
+            <div className="container" style={{position:"relative"}}>
+                
+                <div className="color-overlay"></div>
+                <Image src="https://pngimage.net/wp-content/uploads/2018/06/movie-banner-png-3.png" fluid  />
+                <h1 className="display-5 textBanner">News banner text preview</h1>
             </div>
-            <Row className="d-flex justify-content-center m-3">
+            <Row className="d-flex justify-content-center m-3" style={{marginLeft: '100px', marginRight: '100px'}}>
                 {movies.map(movie => 
                     <CardMovie movie={movie}/>
                 )}
